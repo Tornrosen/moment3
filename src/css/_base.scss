@@ -1,0 +1,28 @@
+/*variabler, grund för hela webbplatsen, typsnitt, mixins*/
+
+$primary-color: #F5F5F5;
+$font-color:#4B164C;
+$primary-color-dm:#4B164C;
+$font-color-dm: #F5F5F5;
+$header-color: #DD88CF;
+$detail-color: #F8E7F6;
+
+$font-style: Georgia serif;
+
+body {
+    background-color: $primary-color;
+    color:$font-color;
+    font-family:$font-style;
+    font-size:1.2em;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+header, footer {
+    background-color:$header-color;
+    padding: 3%;
+    border:#4B164C ridge;
+}
+
+p, h1, h2 {
+    margin: 1%;
+}
