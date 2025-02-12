@@ -2,7 +2,7 @@
 
 @use "sass:color";
 
-/*color.scale(#DD88CF, $lightness, -30%);*/
+
 
 a:link, a:visited {
     text-decoration: none;
@@ -13,6 +13,8 @@ a:link, a:visited {
 @mixin imgStyling {
     border-radius: 2%;
     border-style: groove;
+    margin-left: 1.5%;
+    width: 47%;
 }
 
 #img1, #img2 {
@@ -21,4 +23,8 @@ a:link, a:visited {
 
 .footerContent {
     text-align: center;
+}
+
+#sassHeader {
+    margin-left: 4%;
 }

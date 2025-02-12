@@ -1,5 +1,6 @@
 /*variabler, grund för hela webbplatsen, typsnitt, mixins*/
 
+
 $primary-color: #F5F5F5;
 $font-color:#4B164C;
 $primary-color-dm:#4B164C;
@@ -9,24 +10,42 @@ $detail-color: #F8E7F6;
 
 $font-style: Georgia serif;
 
-@mixin lightOrDark($light-theme: true) {
-    @if $light-theme {
-      background-color: $primary-color;
-      color: $font-color;
-    } @else {
-      background-color: $primary-color-dm;
-      color: $font-color-dm;
+@mixin textColor($value) {
+    @if $value == light {
+        color: $font-color-dm;
     }
-  }
+    @else if $value == dark {
+        color: $font-color}
+}
 
-  body {
-    @include lightOrDark($light-theme: true);
-    body.dark & {
-      @include lightOrDark($light-theme: false);
+@media (prefers-color-scheme: dark) {
+    body {
+      background-color: $primary-color-dm;
+      @include textColor(light);
     }
-  }
+    header, footer {
+        background-color: black;
+        color: $detail-color;
+    }
+    #navMenu {
+        background-color: black;
+        ul{
+            li{
+                a:link, a:visited {
+                    color:$detail-color;
+                }
+            }
+        }
+    }
+    #menuBtn {
+        background-color: black;
+        color:$detail-color;
+    }
+}
 
 body {
+    background-color: $primary-color;
+    @include textColor(dark);
     font-family:$font-style;
     font-size:1.2em;
     margin: 0 auto;
@@ -34,16 +53,22 @@ body {
 }
 header, footer {
     background-color:$header-color;
+    color:$font-color;
     padding: 1%;
     border:#4B164C ridge;
 }
 
+#imgHeader {
+    text-align: center;
+}
+
 h1, h2 {
-    margin: 1%;
+    padding: 1%;
 }
 
 p {
     @extend h1;
     line-height: 1.5em;
     max-width: 70ch;
+    margin-left: 4%;
 }
