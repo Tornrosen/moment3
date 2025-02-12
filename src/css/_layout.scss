@@ -1,20 +1,18 @@
 /*grids, header, media queries*/
 
-.headerImg {
-    width: 100%;
-}
 
 #headMenu {
     list-style-type: none;
     margin: 1%;
     font-size: 100%;
     word-spacing: 0.1em;
+    width: 500px;
 
     li {
         display: inline-block;
         padding: 1%;
 
-        a {
+        a:link, a:visited {
             color: #4B164C;
             text-decoration: none;
         }
@@ -23,7 +21,8 @@
 .flexContainer {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     padding: 1%;
 }
 
@@ -47,14 +46,14 @@
 
     .open {
         position: absolute;
-        top: 7%;
+        top: 3%;
         right: 5%;
     }
 
     .close {
         position: absolute;
-        top: 45%;
-        right: 20%;
+        top: 50%;
+        right: 27%;
     }
 
     .bars {
@@ -84,23 +83,30 @@
         position: absolute;
         right: 0;
         top: 0;
-        height: 105vh;
+        height: 100vh;
         width: 150px;
         display: none;
+
+        ul {
+            list-style-type: none;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0;
+            font-size: 1em;
+            text-align: left;
+
+            li {
+                padding: 0.8em;
+                width: 100%;
+            }
+
+            a:link, a:visited {
+                color: #4B164C;
+                text-decoration: none;
+            }
+    
     }
 
-    #navMenu ul {
-        list-style-type: none;
-        width: 100%;
-        margin: 0 auto;
-        padding: 0;
-        font-size: 1em;
-        text-align: left;
-    }
-
-    #navMenu li {
-        padding: 0.8em;
-        width: 100%;
-    }
 }
 
+}

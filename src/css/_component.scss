@@ -1,5 +1,24 @@
 /*länkar, knappar, återanvändbara delar*/
 
+@use "sass:color";
+
+/*color.scale(#DD88CF, $lightness, -30%);*/
+
 a:link, a:visited {
     text-decoration: none;
+}
+.headerImg {
+    width: 100%;
+}
+@mixin imgStyling {
+    border-radius: 2%;
+    border-style: groove;
+}
+
+#img1, #img2 {
+    @include imgStyling;
+}
+
+.footerContent {
+    text-align: center;
 }
