@@ -3,8 +3,8 @@
 
 $primary-color: #F5F5F5;
 $font-color:#4B164C;
-$primary-color-dm:#4B164C;
-$font-color-dm: #F5F5F5;
+$primary-color-dm: lighten($font-color, 10%);
+$font-color-dm: darken($primary-color, 20%);
 $header-color: #DD88CF;
 $detail-color: #F8E7F6;
 
@@ -29,14 +29,10 @@ $font-style: Georgia serif;
     }
     #navMenu {
         background-color: black;
-        ul{
-            li{
-                a:link, a:visited {
+         }
+    #navMenu ul li a:link, a:visited {
                     color:$detail-color;
                 }
-            }
-        }
-    }
     #menuBtn {
         background-color: black;
         color:$detail-color;
