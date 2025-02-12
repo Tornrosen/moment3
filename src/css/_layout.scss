@@ -77,7 +77,8 @@
         top: -3px;
     }
 
-    #navMenu {
+    
+        #navMenu {
         background-color:#DD88CF;
         position: absolute;
         right: 0;
@@ -103,9 +104,20 @@
                 color: #4B164C;
                 text-decoration: none;
             }
-    
-    }
+}
 
+}
+@media (prefers-color-scheme: dark) {
+    #navMenu {
+        background-color: black;
+         }
+    #navMenu ul li a:link, #navMenu ul li a:visited {
+                    color:#F8E7F6;
+                }
+    #menuBtn {
+        background-color: black;
+        color:#F8E7F6;
+    }
 }
 #img1, #img2 {
     width: 100%;
