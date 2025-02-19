@@ -29,6 +29,11 @@
     display: none;
 }
 
+#imgGrid {
+    display: grid;
+    place-items: center;
+}
+
 @media screen and (max-width: 1024px) {
     #headMenu {
         display: none;
