@@ -1,8 +1,6 @@
 /*länkar, knappar, återanvändbara delar*/
 
-@use "sass:color";
-
-
+@use "base";
 
 a:link, a:visited {
     text-decoration: none;
@@ -12,13 +10,33 @@ a:link, a:visited {
 }
 @mixin imgStyling {
     border-radius: 2%;
-    border-style: groove;
-    margin-left: 1.5%;
-    width: 47%;
+    border-style: groove;   
 }
 
 #img1, #img2 {
     @include imgStyling;
+    margin-left: 1.5%;
+    width: 47%;
+}
+
+.btn {
+    margin: 1%;
+    background-color: base.$header-color;
+    @include imgStyling;
+    padding: 10px;
+    font-family: base.$font-style;
+    font-size: 1.2em;
+    color: darken(base.$font-color, 30%);
+    text-shadow: 1px 1px 3px black;
+    border-radius: 4px;
+}
+
+#btn1 {
+    animation-name: colorChange;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-fill-mode:forwards;
 }
 
 .pic {
@@ -26,6 +44,10 @@ a:link, a:visited {
     border-radius: 1%;
     border-style:double;
     border-color:black;
+}
+
+.pic:hover {
+    filter: grayscale(100%);
 }
 
 .footerContent {

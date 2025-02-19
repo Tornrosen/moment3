@@ -1,5 +1,7 @@
 /*grids, header, media queries*/
 
+@use "base";
+
 #headMenu {
     list-style-type: none;
     margin: 1%;
@@ -12,7 +14,7 @@
         padding: 1%;
 
         a:link, a:visited {
-            color: #4B164C;
+            color: base.$header-color;
             text-decoration: none;
         }
     }
@@ -29,7 +31,7 @@
     display: none;
 }
 
-#imgFlex {
+#imgFlex, #btnFlex {
     display: flex;
     align-items: center;
     justify-content: center;
