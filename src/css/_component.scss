@@ -21,6 +21,13 @@ a:link, a:visited {
     @include imgStyling;
 }
 
+.pic {
+    margin: 1%;
+    border-radius: 1%;
+    border-style:double;
+    border-color:black;
+}
+
 .footerContent {
     text-align: center;
 }

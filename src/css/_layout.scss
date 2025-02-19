@@ -29,10 +29,16 @@
     display: none;
 }
 
-#imgGrid {
-    display: grid;
-    place-items: center;
+#imgFlex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5%;
 }
+
+
+
 
 @media screen and (max-width: 1024px) {
     #headMenu {
