@@ -33,10 +33,17 @@ a:link, a:visited {
 
 #btn1 {
     animation-name: colorChange;
-    animation-duration: 7s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-delay: 3s;
     animation-fill-mode:forwards;
+}
+
+#btn2:active {
+    background-color: rgb(94, 2, 2);
+    color: base.$detail-color;
+    filter: drop-shadow(10px 10px 5px black);
+    transform:rotate(45deg)
 }
 
 .pic {
@@ -46,8 +53,33 @@ a:link, a:visited {
     border-color:black;
 }
 
+#btn3 {
+    transition-property: width, color, font-family, box-shadow;
+    transition-duration: 3s;
+}
+
+#btn3:hover {
+    filter:sepia(50%);
+    width: 300px;
+    color: base.$primary-color;
+    font-family:'Courier New', Courier, monospace;
+    box-shadow: 15px 7px 7px black;
+}
+
+#btn4 {
+    animation-name: runawayBtn;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-fill-mode:both;
+}
+
+
 .pic:hover {
     filter: grayscale(100%);
+    transform: scale(1.05,1.05);
+    border-style:inset;
+    border-color:base.$font-color;
 }
 
 .footerContent {
