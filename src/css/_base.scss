@@ -67,6 +67,18 @@ $font-style: Georgia serif;
     }
 }
 
+@keyframes spinningBtn {
+    0% {
+        transform:rotate(0deg)
+    }
+    50% {
+        transform:rotate(90deg)
+    }
+    100% {
+        transform:rotate(180deg)
+    }
+}
+
 body {
     background-color: $primary-color;
     @include textColor(dark);

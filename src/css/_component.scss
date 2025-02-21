@@ -43,7 +43,8 @@ a:link, a:visited {
     background-color: rgb(94, 2, 2);
     color: base.$detail-color;
     filter: drop-shadow(10px 10px 5px black);
-    transform:rotate(45deg)
+    animation-name: spinningBtn;
+    animation-duration: 3s;
 }
 
 .pic {
