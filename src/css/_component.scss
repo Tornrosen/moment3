@@ -5,13 +5,25 @@
 a:link, a:visited {
     text-decoration: none;
 }
-.headerImg {
-    width: 100%;
-}
 @mixin imgStyling {
     border-radius: 2%;
     border-style: groove;   
 }
+.headerImg {
+    width: 100%;
+    border-style:inset;
+    border-color: base.$primary-color;
+}
+
+.here {
+   border-style:ridge;
+   border-color:base.$font-color; 
+}
+
+.headerImg:hover {
+    filter:brightness(75%);
+}
+
 
 #img1, #img2 {
     @include imgStyling;

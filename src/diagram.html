@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagram</title>
+    <link rel="stylesheet" href="css/main.scss">
+    <script src ="js/main.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <div class="flexContainer"><h1>Frontendutveckling</h1>
+            <button class="menuBtn open" id="openMenu">
+                <span class="menuIcon">
+                    <span class="bars"></span>
+                    <span class="bars"></span>
+                    <span class="bars"></span></span>
+                <span class="menuText">Meny</span>
+            </button>
+            <nav id="navMenu">
+                <button class="menuBtn close" id="closeMenu">
+                    <span class="menuIcon">
+                        <span class="bars cross1"></span>
+                        <span class="bars cross2"></span>
+                    </span>
+                    <span class="menuText">Stäng</span>
+                </button>
+                <ul>
+                    <li><a href="index.html">Startsida</a></li>
+                    <li><a href="sass.html">SASS</a></li>
+                    <li><a href="animation.html">Animationer</a></li>
+                    <li><a href="diagram.html" class="here">Diagram</a></li>
+                    <li><a href="map.html">Karta</a></li>
+                </ul>
+            </nav>
+        <nav>
+            <ul id="headMenu">
+                <li class="menuItem"><a href="index.html">Startsida</a></li>
+                <li class="menuItem"><a href="sass.html">SASS</a></li>
+                <li><a href="animation.html">Animationer</a></li>
+                <li><a href="diagram.html" class="here">Diagram</a></li><li>
+                    <a href="map.html">Karta</a></li>
+            </ul>
+        </nav></div></header>
+    <picture>
+        <source srcset="images/header.jpg?as=webp&width=1920" type="image/webp">
+        <img src="images/header.jpg?width=1920" alt="" class="headerImg">
+    </picture>
+    <h2>Statistik över kurser och program på Mittuniversitetet</h2>
+    <div id="diagramSpace"></div>
+    <footer><p class="footerContent">Anna Danielsson, Webbutvecklingsprogrammet</p></footer>
+</body>
+</html>
