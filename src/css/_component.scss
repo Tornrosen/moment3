@@ -5,6 +5,7 @@
 a:link, a:visited {
     text-decoration: none;
 }
+
 @mixin imgStyling {
     border-radius: 2%;
     border-style: groove;   
@@ -25,10 +26,40 @@ a:link, a:visited {
 }
 
 
-#img1, #img2 {
+#img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8 {
     @include imgStyling;
-    margin-left: 1.5%;
-    width: 47%;
+}
+
+#img1:hover {
+    filter:hue-rotate(90deg);
+}
+
+#img2:hover {
+    filter:contrast(200%);
+}
+
+#img3:hover {
+    filter:blur(1px);
+}
+
+#img4:hover {
+    filter:opacity(30%);
+}
+
+#img5:hover {
+    filter:drop-shadow(5px 5px black);
+}
+
+#img6:hover {
+    filter:invert(10%);
+}
+
+#img7:hover {
+    filter:saturate(40%);
+}
+
+#img8:hover {
+    filter:sepia(80%);
 }
 
 .btn {
