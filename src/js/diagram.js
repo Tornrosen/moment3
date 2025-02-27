@@ -33,7 +33,6 @@ function displayCourses() {
     const courses= diagramData.filter(courses=>courses.type=="Kurs");
     courses.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
     let topCourses = courses.slice(0,6);
-    
     const barDiagram = document.getElementById('bar').getContext('2d');
 new Chart(barDiagram, {
     type: 'bar',
