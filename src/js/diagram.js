@@ -1,6 +1,7 @@
 "use strict";
 
 let diagramData =[];
+let courses =[];
 
 window.onload = () => {
     loadDiagramData();
@@ -27,4 +28,49 @@ async function loadDiagramData() {
  */
 function displayData(diagramData) {
     console.log(diagramData);
+    filterAndSortData();
 }
+/**
+ * funktion som filtrerar data efter kurs eller program samt sorterar den efter antal sökande
+ */
+function filterAndSortData() {
+    const courses= diagramData.filter(courses=>courses.type=="Kurs");
+    courses.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
+    console.log(courses);
+    const programmes= diagramData.filter(programmes=>programmes.type=="Program");
+    programmes.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
+    console.log(programmes);
+}
+
+const barDiagram = document.getElementById('bar');
+
+  new Chart(barDiagram, {
+    type: 'bar',
+    data: {
+      labels: [],
+      datasets: [{
+        label: '# of Applicants',
+        data: [],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  const pieDiagram = document.getElementById('pie');
+
+  new Chart(pieDiagram, {
+    type:'pie',
+    data: {
+        labels: [],
+        datasets: [{
+          label: '# of Applicants',
+          data: [],
+          borderWidth: 1
+        }]  }});
