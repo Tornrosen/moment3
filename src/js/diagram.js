@@ -2,6 +2,7 @@
 
 let diagramData =[];
 let courses =[];
+let programmes=[];
 
 window.onload = () => {
     loadDiagramData();
@@ -16,42 +17,32 @@ async function loadDiagramData() {
             throw new error("Anslutning fungerar ej.")
         }
         diagramData=await response.json();
-        displayData(diagramData);
+        displayCourses(diagramData);
+        displayProgrammes(diagramData);
     } 
     catch (error) {
         console.error(error);
     }
 }
+
 /**
- * funktion som kör funktioner för att filtrerar och sortera data samt skriver ut data till DOM
- * @param data från funktionen loadDiagramData.
+ * funktion som filtrerar, sorterar data, kortar ner array och skriver ut data för kurser
+ * @param diagramData
  */
-function displayData(diagramData) {
-    console.log(diagramData);
-    filterAndSortData();
-}
-/**
- * funktion som filtrerar data efter kurs eller program samt sorterar den efter antal sökande
- */
-function filterAndSortData() {
+function displayCourses() {
     const courses= diagramData.filter(courses=>courses.type=="Kurs");
     courses.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
-    console.log(courses);
-    const programmes= diagramData.filter(programmes=>programmes.type=="Program");
-    programmes.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
-    console.log(programmes);
-}
-
-const barDiagram = document.getElementById('bar');
-
-  new Chart(barDiagram, {
+    let topCourses = courses.slice(0,6);
+    
+    const barDiagram = document.getElementById('bar').getContext('2d');
+new Chart(barDiagram, {
     type: 'bar',
     data: {
-      labels: [],
+      labels: topCourses.map(course => course.name),
       datasets: [{
-        label: '# of Applicants',
-        data: [],
-        borderWidth: 1
+        label: 'Antal sökande',
+        data: topCourses.map(course => course.applicantsTotal),
+        borderWidth: 10
       }]
     },
     options: {
@@ -62,15 +53,29 @@ const barDiagram = document.getElementById('bar');
       }
     }
   });
-
-  const pieDiagram = document.getElementById('pie');
+}
+/**
+ * funktion som filtrerar, sorterar data, kortar ner array och skriver ut data för program
+ * @param diagramData
+ */
+    function displayProgrammes() {
+        const programmes= diagramData.filter(programmes=>programmes.type=="Program");
+    programmes.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
+    let topProgrammes = programmes.slice(0,5);
+    const pieDiagram = document.getElementById('pie');
 
   new Chart(pieDiagram, {
     type:'pie',
     data: {
-        labels: [],
+        labels: topProgrammes.map(programme => programme.name),
         datasets: [{
-          label: '# of Applicants',
-          data: [],
+          label: 'Antal sökande',
+          data: topProgrammes.map(programme => programme.applicantsTotal),
           borderWidth: 1
         }]  }});
+}
+
+
+  
+
+  
