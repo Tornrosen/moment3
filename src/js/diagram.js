@@ -74,7 +74,7 @@ function displayProgrammes() {
                 label: 'Antal sökande',
                 data: topProgrammes.map(programme => programme.applicantsTotal),
                 borderWidth: 2,
-                backgroundColor: ['#000000', '#4B164C', '#F5F5F5', '#DD88CF', '#F8E7F6'],
+                backgroundColor: ['#000000', '#4B164C', '#EE82EE', '#DD88CF', '#7D1C4A'],
                 borderColor: '#FFFFFF',
             }]
         }

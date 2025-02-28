@@ -1,6 +1,7 @@
 /*länkar, knappar, återanvändbara delar*/
 
 @use "base";
+@use "keyframes";
 
 a:link, a:visited {
     text-decoration: none;
