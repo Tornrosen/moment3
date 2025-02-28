@@ -16,6 +16,18 @@ a:link, a:visited {
     border-color: base.$primary-color;
 }
 
+#diagramSpace1 {
+    margin: 1%;
+}
+
+#diagramSpace2 {
+    width: 60%;
+    height: 60%;
+    margin: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
 .here {
    border-style:ridge;
    border-color:base.$font-color; 
@@ -23,6 +35,20 @@ a:link, a:visited {
 
 .headerImg:hover {
     filter:brightness(75%);
+}
+
+#textBackground {
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+}
+
+#sassText, #sassHeader {
+    background-color: black;
+    width:fit-content;
 }
 
 

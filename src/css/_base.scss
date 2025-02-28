@@ -3,7 +3,7 @@
 
 $primary-color: #F5F5F5;
 $font-color:#4B164C;
-$primary-color-dm: lighten($font-color, 10%);
+$primary-color-dm: lighten($font-color, 20%);
 $font-color-dm: darken($primary-color, 20%);
 $header-color: #DD88CF;
 $detail-color: #F8E7F6;
@@ -18,63 +18,7 @@ $font-style: Georgia serif;
         color: $font-color}
 }
 
-@keyframes colorChange {
-    0% {
-        background-color: $detail-color;
-        transform:scale(1,1)
-    }
-    10% {
-        background-color: darken($detail-color, 10%);
-    }
-    20% {
-        background-color: darken($detail-color, 20%);
-    }
-    30% {
-        background-color: lighten($header-color, 10%);
-    }
-    40% {
-        background-color: lighten($header-color, 5%);
-    }
-    50% {
-        background-color: $header-color;
-    }
-    60% {
-        background-color: darken($header-color, 10%);
-    }
-    70% {
-        background-color: darken($header-color, 20%);
-    }
-    80% {
-        background-color: darken($header-color, 30%);
-        
-    }
-    90% {
-        background-color: darken($header-color, 40%);
-    }
-    100% {
-        background-color: #56124b;
-        transform:scale(0.5,0.5)
-    }
-}
 
-@keyframes runawayBtn {
-    0% {
-        transform: translate(0px,0px);
-    }
-    100% {
-        transform: translate(400px, 0px);
-        opacity: 0;
-    }
-}
-
-@keyframes spinningBtn {
-    0% {
-        transform:rotate(0deg)
-    }
-    100% {
-        transform:rotate(180deg)
-    }
-}
 
 body {
     background-color: $primary-color;
