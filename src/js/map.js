@@ -9,16 +9,73 @@
     region: "SE",
   });
 
+  let lat= 59.9208594;
+  let long=16.606327999999962;
+  let city="Sala";
   let map;
+  let marker;
+
+  /**funktion från google maps som hämtar in karta */
 
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
   map = new Map(document.getElementById("map"), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
+    center: { lat: lat, lng: long },
+    zoom: 10,
+    mapId: "DEMO_MAP_ID",
   });
+  marker = new AdvancedMarkerElement({
+    map: map,
+    position: { lat: lat, lng: long },
+    title: city,
+});
 }
 
 initMap();
 
+let searchBtnEl = document.getElementById("searchBtn");
+
+searchBtnEl.addEventListener("click", getPosition);
+
+/**funktion som läser in värdet från ett inputfält och söker i API med hjälp av detta värde,
+ * väljer ut det första svaret och kör sedan funktionen updateMarker för att flytta markören
+ */
+
+async function getPosition () {
+  let searchPhrase = document.querySelector("#searchingMap").value;
+
+  let url=`https://nominatim.openstreetmap.org/search?format=json&q=${searchPhrase}`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+        throw new Error("Fel vid anslutning...");
+    }
+    let places = await response.json();
+    let place = places.slice(0, 1);
+        updateMarker(place);
+} catch (error) {
+    console.error(error);
+}
+
+}
+
+async function updateMarker(place) {
+  
+console.log (place);
+
+  
+ lat = place.lat;
+ long = place.long;
+ city = place.name;
+
+
+
+ 
+  marker.position = { lat: lat, lng: long };
+  marker.title = city;
+
+
+  map.setCenter({ lat: lat, lng: long });
+}

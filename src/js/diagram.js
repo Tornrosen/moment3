@@ -8,7 +8,7 @@ window.onload = () => {
     loadDiagramData();
 }
 /**
- * funktion som hämtar data från miuns url och sedan kör funktionen displayData.
+ * funktion som hämtar data från miuns url och sedan kör funktionerna filterCourses och filterProgrammes.
  */
 async function loadDiagramData() {
     try {
@@ -17,8 +17,8 @@ async function loadDiagramData() {
             throw new error("Anslutning fungerar ej.")
         }
         diagramData = await response.json();
-        displayCourses(diagramData);
-        displayProgrammes(diagramData);
+        filterCourses(diagramData);
+        filterProgrammes(diagramData);
     }
     catch (error) {
         console.error(error);
@@ -26,53 +26,62 @@ async function loadDiagramData() {
 }
 
 /**
- * funktion som filtrerar, sorterar data, kortar ner array och skriver ut data för kurser
+ * funktion som filtrerar och sorterar data, samt kortar ner arrayen och kör funktionen displayCourses
  * @param diagramData
  */
-function displayCourses() {
+function filterCourses() {
     const courses = diagramData.filter(courses => courses.type == "Kurs");
     courses.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
     let topCourses = courses.slice(0, 6);
-    const barDiagram = document.getElementById('bar').getContext('2d');
-    Chart.defaults.color ='#000000';
-    new Chart(barDiagram, {
-        type: 'bar',
-        data: {
-            labels: topCourses.map(course => course.name),
-            datasets: [{
-                label: 'Antal sökande',
-                data: topCourses.map(course => course.applicantsTotal),
-                borderWidth: 2,
-                backgroundColor:'#000000',
-                borderColor: '#FFFFFF',
-                
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+    displayCourses(topCourses);
+}
+
+/**funktion som skriver ut data till diagram
+ * @param topCourses
+ */
+function displayCourses(data) {const barDiagram = document.getElementById('bar').getContext('2d');
+Chart.defaults.color ='#000000';
+new Chart(barDiagram, {
+    type: 'bar',
+    data: {
+        labels: data.map(course => course.name),
+        datasets: [{
+            label: 'Antal sökande',
+            data: data.map(course => course.applicantsTotal),
+            borderWidth: 2,
+            backgroundColor:'#000000',
+            borderColor: '#FFFFFF',
+            
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
             }
         }
-    });
-}
+    }
+});}
 /**
- * funktion som filtrerar, sorterar data, kortar ner array och skriver ut data för program
+ * funktion som filtrerar, sorterar data och kortar ner array för program samt kör funktionen displayProgrammes
  * @param diagramData
  */
-function displayProgrammes() {
+function filterProgrammes() {
     const programmes = diagramData.filter(programmes => programmes.type == "Program");
     programmes.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
     let topProgrammes = programmes.slice(0, 5);
+    displayProgrammes(topProgrammes);
+}
+
+function displayProgrammes(data) {
     const pieDiagram = document.getElementById('pie');
     new Chart(pieDiagram, {
         type: 'pie',
         data: {
-            labels: topProgrammes.map(programme => programme.name),
+            labels: data.map(programme => programme.name),
             datasets: [{
                 label: 'Antal sökande',
-                data: topProgrammes.map(programme => programme.applicantsTotal),
+                data: data.map(programme => programme.applicantsTotal),
                 borderWidth: 2,
                 backgroundColor: ['#000000', '#4B164C', '#EE82EE', '#DD88CF', '#7D1C4A'],
                 borderColor: '#FFFFFF',
