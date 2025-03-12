@@ -33,6 +33,7 @@ function filterCourses() {
     const courses = diagramData.filter(courses => courses.type == "Kurs");
     courses.sort((a, b) => b.applicantsTotal - a.applicantsTotal);
     let topCourses = courses.slice(0, 6);
+    topCourses.sort((a, b) => a.applicantsTotal - b.applicantsTotal);
     displayCourses(topCourses);
 }
 
@@ -60,8 +61,14 @@ new Chart(barDiagram, {
                 beginAtZero: true
             }
         }
+
+           , layout: {
+                padding: 5
+                
+            }
+        }
     }
-});}
+);}
 /**
  * funktion som filtrerar, sorterar data och kortar ner array för program samt kör funktionen displayProgrammes
  * @param diagramData

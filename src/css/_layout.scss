@@ -41,7 +41,43 @@
     gap: 0.5%;
 }
 
+#diagramSpace1 {
+    display: flex;
+    margin: 1%;
+    padding: 1%;
+    flex-direction: row;
+}
+
+#diagramSpace2, #diagramSpace3 {
+    display: flex;
+    flex-direction: column;
+}
+
+#diagramSpace2 {
+    width: 800px;
+    height: auto;
+}
+
+#diagramSpace3 {
+    width: 350px;
+    height: auto;
+}
+
 @media screen and (max-width: 1024px) {
+    #diagramSpace1 {
+        flex-direction: column;
+    }
+    #diagramSpace2 {
+        width: 100%;
+        height: auto;
+    }
+    
+    #diagramSpace3 {
+        width: 90%;
+        height: auto;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
     #headMenu {
         display: none;
     }
