@@ -43,24 +43,28 @@
 
 #diagramSpace1 {
     display: flex;
+    flex-direction: row;
     margin: 1%;
     padding: 1%;
-    flex-direction: row;
 }
 
 #diagramSpace2, #diagramSpace3 {
     display: flex;
     flex-direction: column;
+   
 }
 
-#diagramSpace2 {
-    width: 800px;
-    height: auto;
+#diagramSpace2 { 
+  position: relative;   
+  height: 80vh;
+  width: 50vw;
 }
 
 #diagramSpace3 {
-    width: 350px;
+    width: 450px;
     height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 @media screen and (max-width: 1024px) {
@@ -151,6 +155,9 @@
             a:link, a:visited {
                 color: #4B164C;
                 text-decoration: none;
+            }
+            h1 {
+                font-size: 80%;
             }
 }
 

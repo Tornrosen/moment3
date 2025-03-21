@@ -52,18 +52,23 @@ new Chart(barDiagram, {
             borderWidth: 2,
             backgroundColor:'#000000',
             borderColor: '#FFFFFF',
+            font: {
+                size: 8,
+            }
             
         }]
     },
     options: {
+        maintainAspectRatio: false,
         scales: {
+            
             y: {
                 beginAtZero: true
             }
         }
 
            , layout: {
-                padding: 5
+                padding: 1
                 
             }
         }
