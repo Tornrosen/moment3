@@ -4,7 +4,7 @@
 $primary-color: #F5F5F5;
 $font-color:#4B164C;
 $primary-color-dm: lighten($font-color, 20%);
-$font-color-dm: darken($primary-color, 20%);
+$font-color-dm: darken($primary-color, 10%);
 $header-color: #DD88CF;
 $detail-color: #F8E7F6;
 
@@ -15,7 +15,8 @@ $font-style: Georgia serif;
         color: $font-color-dm;
     }
     @else if $value == dark {
-        color: $font-color}
+        color: $font-color;
+    }
 }
 
 
@@ -58,5 +59,9 @@ p {
     header, footer {
         background-color: black;
         color: $detail-color;
+        
+    }
+    #navMenu ul li a:link, #navMenu ul li a:visited {
+        color:#F8E7F6;
     }
 }
