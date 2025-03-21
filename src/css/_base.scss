@@ -4,7 +4,7 @@
 $primary-color: #F5F5F5;
 $font-color:#4B164C;
 $primary-color-dm: lighten($font-color, 20%);
-$font-color-dm: darken($font-color, 10%);
+$font-color-dm: darken($primary-color, 20%);
 $header-color: #DD88CF;
 $detail-color: #F8E7F6;
 
