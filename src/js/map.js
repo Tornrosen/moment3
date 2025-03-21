@@ -16,7 +16,11 @@ let map;
 let marker;
 
 /**funktion från google maps som hämtar in karta 
+ * 
  * @function initMap
+ * @param void
+ * @return void
+ * 
 */
 
 async function initMap() {
@@ -41,8 +45,12 @@ let searchBtnEl = document.getElementById("searchBtn");
 
 searchBtnEl.addEventListener("click", getPosition);
 
-/**funktion som läser in värdet från ett inputfält och söker i API med hjälp av detta värde,
+/**läser in värdet från ett inputfält och söker i API med hjälp av detta värde,
  * väljer ut det första svaret och kör sedan funktionen updateMarker för att flytta markören
+ * 
+ * function getPosition
+ * @param void
+ * @return void
  */
 
 async function getPosition() {
@@ -63,8 +71,11 @@ async function getPosition() {
 
 }
 
-/**funktion som flyttar runt markören på kartan
- * @param {*} place 
+/**flyttar runt markören på kartan
+ * 
+ * function updateMarker
+ * @param {array} place 
+ * @return void
  */
 
 async function updateMarker(place) {

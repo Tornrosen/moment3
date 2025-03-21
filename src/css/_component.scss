@@ -1,11 +1,7 @@
-/*länkar, knappar, återanvändbara delar*/
+/*knappar, återanvändbara delar*/
 
 @use "base";
 @use "keyframes";
-
-a:link, a:visited {
-    text-decoration: none;
-}
 
 @mixin imgStyling {
     border-radius: 2%;
@@ -38,6 +34,7 @@ a:link, a:visited {
 #sassText, #sassHeader {
     background-color: black;
     width:fit-content;
+    color: base.$primary-color;
 }
 
 

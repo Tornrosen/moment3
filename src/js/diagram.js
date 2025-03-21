@@ -7,8 +7,13 @@ let programmes = [];
 window.onload = () => {
     loadDiagramData();
 }
+
 /**
- * funktion som hämtar data från miuns url och sedan kör funktionerna filterCourses och filterProgrammes.
+ * Hämtar data från miuns url och kör funktionerna filterCourses och filterProgrammes.
+ * 
+ * function loadDiagramData
+ * @param void
+ * @return void
  */
 async function loadDiagramData() {
     try {
@@ -26,8 +31,11 @@ async function loadDiagramData() {
 }
 
 /**
- * funktion som filtrerar och sorterar data, samt kortar ner arrayen och kör funktionen displayCourses
- * @param diagramData
+ * filtrerar och sorterar data, kortar ner arrayen och kör funktionen displayCourses
+ * 
+ * function filterCourses
+ * @param {array} diagramData
+ * @return void
  */
 function filterCourses() {
     const courses = diagramData.filter(courses => courses.type == "Kurs");
@@ -37,8 +45,11 @@ function filterCourses() {
     displayCourses(topCourses);
 }
 
-/**funktion som skriver ut data till diagram
- * @param topCourses
+/**skriver ut data till diagram
+ * 
+ * function displayCourses
+ * @param {array} data
+ * @return void
  */
 function displayCourses(data) {const barDiagram = document.getElementById('bar').getContext('2d');
 Chart.defaults.color ='#000000';
@@ -75,8 +86,11 @@ new Chart(barDiagram, {
     }
 );}
 /**
- * funktion som filtrerar, sorterar data och kortar ner array för program samt kör funktionen displayProgrammes
- * @param diagramData
+ * filtrerar, sorterar data och kortar ner array för program samt kör funktionen displayProgrammes
+ * 
+ * function filterProgrammes
+ * @param {array} diagramData
+ * @return void
  */
 function filterProgrammes() {
     const programmes = diagramData.filter(programmes => programmes.type == "Program");
@@ -84,6 +98,14 @@ function filterProgrammes() {
     let topProgrammes = programmes.slice(0, 5);
     displayProgrammes(topProgrammes);
 }
+
+/**
+ * Visar program i ett cirkeldiagram
+ * 
+ * function displayProgrammes
+ * @param {array} data 
+ * @return void
+ */
 
 function displayProgrammes(data) {
     const pieDiagram = document.getElementById('pie');

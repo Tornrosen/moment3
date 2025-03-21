@@ -19,8 +19,6 @@ $font-style: Georgia serif;
     }
 }
 
-
-
 body {
     background-color: $primary-color;
     @include textColor(dark);
@@ -61,7 +59,7 @@ p {
         color: $detail-color;
         
     }
-    #headMenu ul li a:link, #headMenu ul li a:visited {
+    #headMenu li a:link, #headMenu li a:visited {
         color: $detail-color;
     }
 }

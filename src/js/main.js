@@ -12,6 +12,13 @@ closeBtn.addEventListener("click", toggleMenu);
 
 //skapar funktion
 
+/**Döljer och visar menyn när man klickar på knappen
+ * 
+ * function toggleMenu
+ * @param void
+ * @return void
+ */
+
 function toggleMenu() {
     let navMenuEl = document.getElementById("navMenu");
 
