@@ -27,6 +27,10 @@ body {
     margin: 0 auto;
     overflow-x: hidden;
 }
+a {
+color: $font-color;
+text-decoration: none;
+}
 header, footer {
     background-color:$header-color;
     color:$font-color;
@@ -60,6 +64,9 @@ p {
         
     }
     #headMenu li a:link, #headMenu li a:visited {
+        color: $detail-color;
+    }
+    a {
         color: $detail-color;
     }
 }
